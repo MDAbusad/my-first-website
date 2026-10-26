@@ -1,144 +1,20 @@
+<script>
+function order(product) {
+  const phone = "919128020016";
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Shopping Store</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #172033;
-    }
-    header {
-      background: #172554;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 { font-size: 28px; }
-    header p { margin-top: 8px; color: #dbeafe; }
-    nav {
-      background: #1e40af;
-      padding: 12px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: bold;
-    }
-    .hero {
-      margin: 20px auto;
-      max-width: 1000px;
-      padding: 45px 20px;
-      border-radius: 18px;
-      text-align: center;
-      background: linear-gradient(135deg, #dbeafe, #eef2ff);
-    }
-    .hero h2 { font-size: 30px; margin-bottom: 12px; }
-    .hero p { line-height: 1.6; color: #475569; }
-    .products {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 0 16px;
-    }
-    .products h2 { text-align: center; margin-bottom: 22px; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 5px 20px #17255412;
-    }
-    .product-icon { font-size: 64px; margin: 12px; }
-    .card h3 { margin: 10px 0; }
-    .price { color: #1d4ed8; font-size: 22px; font-weight: bold; margin: 12px; }
-    .card button {
-      border: 0;
-      background: #1d4ed8;
-      color: white;
-      padding: 12px 20px;
-      border-radius: 9px;
-      font-size: 15px;
-      cursor: pointer;
-    }
-    .card button:hover { background: #172554; }
-    footer {
-      margin-top: 35px;
-      background: #172554;
-      color: white;
-      padding: 25px 15px;
-      text-align: center;
-      line-height: 1.8;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>My Shopping Store</h1>
-    <p>Discover something you will love!</p>
-  </header>
+  const prices = {
+    "Smart Watch": 499,
+    "Headphones": 799,
+    "Travel Bag": 599
+  };
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  const message =
+    `Hello, I want to order ${product} for ₹${prices[product]}.`;
 
-  <section class="hero" id="home">
-    <h2>Welcome to Our Store</h2>
-    <p>Explore our featured products and find your next favourite item.</p>
-  </section>
+  const url = "https://wa.me/" + phone +
+    "?text=" + encodeURIComponent(message);
 
-  <section class="products" id="products">
-    <h2>Featured Products</h2>
-    <div class="grid">
-      <div class="card">
-        <div class="product-icon">⌚</div>
-        <h3>Smart Watch</h3>
-        <p>Stylish everyday technology.</p>
-        <p class="price">₹499</p>
-        <button onclick="order('Smart Watch')">Order Now</button>
-      </div>
-      <div class="card">
-        <div class="product-icon">🎧</div>
-        <h3>Headphones</h3>
-        <p>Enjoy your favourite music.</p>
-        <p class="price">₹799</p>
-        <button onclick="order('Headphones')">Order Now</button>
-      </div>
-      <div class="card">
-        <div class="product-icon">🎒</div>
-        <h3>Travel Bag</h3>
-        <p>Carry your essentials in style.</p>
-        <p class="price">₹599</p>
-        <button onclick="order('Travel Bag')">Order Now</button>
-      </div>
-    </div>
-  </section>
-
-  <footer id="contact">
-    <h3>My Shopping Store</h3>
-    <p>Thank you for visiting our demo store.</p>
-    <p>Contact: Add your business contact here</p>
-    <p>© 2026 My Shopping Store</p>
-  </footer>
-
-  <script>
-    function order(product) {
-      alert("Thanks for your interest in " + product +
-        "! This is a demo store. Contact the store owner to order.");
-    }
-  </script>
-</body>
-</html>
+  window.open(url, "_blank");
+}
+</script>
 
