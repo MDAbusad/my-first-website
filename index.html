@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Shopping Store</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f2f5f3;
+      color: #222;
+    }
+    header {
+      background: #176b45;
+      color: white;
+      text-align: center;
+      padding: 25px 10px;
+    }
+    .products {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    .product {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      width: 280px;
+      box-shadow: 0 2px 10px #ddd;
+    }
+    button {
+      background: #176b45;
+      color: white;
+      border: 0;
+      border-radius: 6px;
+      padding: 12px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Shopping Store</h1>
+    <p>Shop your favourite products</p>
+  </header>
+
+  <main class="products">
+    <div class="product">
+      <h2>Smart Watch</h2>
+      <p>Quality product for everyday use.</p>
+      <h3>₹499</h3>
+      <button onclick="alert('Please contact us to order!')">
+        Order Now
+      </button>
+    </div>
+  </main>
+</body>
+</html>
